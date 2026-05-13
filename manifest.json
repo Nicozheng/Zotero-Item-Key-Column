@@ -8,7 +8,7 @@
       "id": "item-key-column@rvella",
       "update_url": "https://not-yet-setup.com/updates.json",
       "strict_min_version": "7.0.0",
-      "strict_max_version": "8.*"
+      "strict_max_version": "9.*"
     }
   }
 }

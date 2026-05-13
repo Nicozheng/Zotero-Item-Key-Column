@@ -9,7 +9,6 @@ Thumbs.db
 *.iml
 
 # Build artifacts
-*.xpi
 *.zip
 
 # Node/npm (if you later use npm scripts for building)
