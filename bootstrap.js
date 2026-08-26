@@ -64,7 +64,14 @@ function onMainWindowUnload({ window }) {
 
 // ── Lifecycle ──
 async function startup() {
-  await registerColumn(); 
+  await registerColumn();
+  // onMainWindowLoad only fires for windows opened after this point, so set up
+  // the info row here for windows already open (install/enable while running)
+  registerInfoRow();
+  for (let win of Zotero.getMainWindows()) {
+    win.MozXULElement?.insertFTLIfNeeded("item-key-column.ftl");
+  }
+  Zotero.ItemPaneManager?.refreshInfoRow?.(infoRowID);
 }
 async function shutdown() {
   await unregisterColumn();
